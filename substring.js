@@ -6,6 +6,7 @@ function isSubString(string, subString) {
     if (string.indexOf(subString) === -1) {
         console.log('SubString not found');
     }
+    // deletion part
     for (let index = 0, i = 0; index < string.length; index++) {
         const element = string[index];
         if (string[index] === subString[i]) {
@@ -19,20 +20,14 @@ function isSubString(string, subString) {
             }
         }
         else {
-            result += possibleMatch;
-            possibleMatch = '';
             if (i === 0) {
                 result += element;
-            }
-            else {
-                i = 0;
-                index--;
             }
         }
     }
     return 'After deleting the substring: ' + result;
 }
-console.log(isSubString('axbjcd', 'jc'));;
+console.log(isSubString('abxbjccd', 'jcc'));;
 
 
 
